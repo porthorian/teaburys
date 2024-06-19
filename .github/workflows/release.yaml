@@ -14,8 +14,6 @@ jobs:
   build:
     name: Build and Release Container Image
     runs-on: ubuntu-latest
-    env: 
-      TAG: ${{ env.REGISTRY }}/${{ env.PACKAGE_PATH }}/${{ env.IMAGE_NAME }}:${{ env.BUILD_VERSION }}
     steps:
       - uses: actions/checkout@v4
       - name: Login to Container Registry
@@ -24,6 +22,9 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set Tag
+        run: |
+          echo "TAG=${{ env.REGISTRY }}/${{ env.PACKAGE_PATH }}/${{ env.IMAGE_NAME }}:${{ env.BUILD_VERSION }}"
       - name: Build Image
         run: |
           docker build \
