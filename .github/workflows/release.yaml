@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Set Tag
         run: |
-          echo "TAG=${{ env.REGISTRY }}/${{ env.PACKAGE_PATH }}/${{ env.IMAGE_NAME }}:${{ env.BUILD_VERSION }}"
+          echo "TAG=${{ env.REGISTRY }}/${{ env.PACKAGE_PATH }}/${{ env.IMAGE_NAME }}:${{ env.BUILD_VERSION }}" >> $GITHUB_ENV
       - name: Build Image
         run: |
           docker build \
