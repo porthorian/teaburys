@@ -10,6 +10,9 @@ env:
   PACKAGE_PATH: porthorian/teaburys
   BUILD_VERSION: ${{ github.ref_name }}
 
+permissions:
+  packages: write
+
 jobs:
   build:
     name: Build and Release Container Image
