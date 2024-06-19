@@ -7,7 +7,7 @@ on:
 env:
   IMAGE_NAME: node_server
   REGISTRY: ghcr.io
-  PACKAGE_PATH: Porthorian/teaburys
+  PACKAGE_PATH: porthorian/teaburys
   BUILD_VERSION: ${{ github.ref_name }}
 
 jobs:
