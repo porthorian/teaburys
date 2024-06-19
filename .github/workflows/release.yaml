@@ -1,0 +1,34 @@
+name: release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+env:
+  IMAGE_NAME: node_server
+  REGISTRY: ghcr.io
+  PACKAGE_PATH: Porthorian/teaburys
+  BUILD_VERSION: ${{ github.ref_name }}
+
+jobs:
+  build:
+    name: Build and Release Container Image
+    runs-on: ubuntu-latest
+    env: 
+      TAG: ${{ env.REGISTRY }}/${{ env.PACKAGE_PATH }}/${{ env.IMAGE_NAME }}:${{ env.BUILD_VERSION }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Login to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build Image
+        run: |
+          docker build \
+          --tag ${{ env.TAG }} \
+          .
+      - name: Publish Image
+        run: |
+          docker push ${{ env.TAG }}
