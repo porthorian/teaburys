@@ -2,7 +2,7 @@ FROM node:22.4-alpine AS builder
 
 WORKDIR /workspace
 
-COPY yarn.lock package.json ./
+COPY . .
 RUN yarn install
 RUN yarn build
 
