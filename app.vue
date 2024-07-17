@@ -1,9 +1,9 @@
 <template>
   <NuxtLayout>
-    <v-app>
-      <v-container>
+    <v-app class="fill-height" style="background-color:#ede9cc">
+      <v-container class="fill-height">
         <NuxtPage />
-        <v-footer>
+        <v-footer class="position-bottom position-relative w-100 mt-auto rounded-lg">
           <v-row justify="center" no-gutters>
             <v-col class="text-center mt-4" cols="12">
               {{ new Date().getFullYear() }} — <strong>Teaburys</strong>
