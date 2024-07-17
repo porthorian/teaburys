@@ -7,7 +7,7 @@
             <!-- <h3 class="banner-title font-weight-bold text-white">
               Welcome to Teaburys
             </h3> -->
-            <v-img height="400" width="400" src="/the-shop.jpg"></v-img>
+            <v-img aspect-ratio="1/1" max-height="400" max-width="400" src="/the-shop.jpg"></v-img>
           </div>
         </v-col>
       </v-row>
