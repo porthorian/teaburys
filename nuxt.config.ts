@@ -4,6 +4,7 @@ const description: string = `The Shop at Teabury, located in Oakhurst, NJ is you
 We specialize in a wide variety of barbering and hair styling services tailored to men, women, and children. 
 Whether you're looking for a classic cut or something more trendy, we are here to help you achieve the perfect style.`
 
+// https://nuxt.com/docs/api/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   build: {
