@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     head: {
         title: 'The Shop at Teabury',
         meta: [
-            { name: 'keywords', content: 'Barbershop, Ocean, Oakhurst, New Jersey, NJ, Monmouth County, Fade, Shape Up, Beard Trim, Mens Barbershop, Children Barbershop'},
+            { name: 'keywords', content: 'Barbershop, Ocean, Ocean Township, Oakhurst, New Jersey, NJ, Monmouth County, Fade, Shape Up, Beard Trim, Mens Barbershop, Children Barbershop'},
             { name: 'description', content: description },
             { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover' },
             { 'http-equiv': 'Content-Type', content: 'text/html;charset=UTF-8' },
