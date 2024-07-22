@@ -36,8 +36,8 @@ export default defineNuxtConfig({
             // OpenGraph
             { name: 'og:url', content: 'https://theshop.teaburys.com' },
             { name: 'og:type', content: 'website' },
-            { name: 'og:title', content: 'The Shop at Teabury in Ocean Township, NJ' },
-            { name: 'og:description', content: description },
+            { name: 'og:title', content: 'The Shop at Teabury in Ocean Township' },
+            { name: 'og:description', content: "The Shop at Teabury, in Ocean Twp, NJ: Your friendly barbershop." },
             { name: 'og:site_name', content: 'The Shop at Teabury' },
             { name: 'og:image', content: 'https://theshop.teaburys.com/the-shop.png' },
             { name: 'og:image:alt', content: 'The Shop' },
