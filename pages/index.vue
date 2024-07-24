@@ -15,10 +15,3 @@
     </v-container>
   </v-main>
 </template>
-
-<style lang="scss" scoped>
-.logo-hero {
-  height: 400px;
-  width: 400px;
-}
-</style>

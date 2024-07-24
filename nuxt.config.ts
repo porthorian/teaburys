@@ -7,9 +7,11 @@ Whether you're looking for a classic cut or something more trendy, we are here t
 // https://nuxt.com/docs/api/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   build: {
     transpile: ['vuetify'],
   },
+
   modules: [
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
@@ -18,6 +20,7 @@ export default defineNuxtConfig({
       })
     },
   ],
+
   vite: {
     vue: {
       template: {
@@ -25,6 +28,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   app: {
     head: {
         title: 'The Shop at Teabury',
@@ -62,5 +66,7 @@ export default defineNuxtConfig({
             // { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: "" }
         ]
     }
-}
+},
+
+  compatibilityDate: '2024-07-24'
 })
