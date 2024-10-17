@@ -1,4 +1,4 @@
-FROM node:22.9-alpine AS builder
+FROM node:23.0-alpine AS builder
 
 WORKDIR /workspace
 
@@ -6,7 +6,7 @@ COPY . .
 RUN yarn install
 RUN yarn build
 
-FROM node:22.9-alpine
+FROM node:23.0-alpine
 WORKDIR /
 EXPOSE 3000
 
