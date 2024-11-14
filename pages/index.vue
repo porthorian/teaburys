@@ -9,7 +9,7 @@
                max-height="450" max-width="450"
                class="mx-auto"></v-img>
             <v-row class="mt-2">
-              <v-btn class="mx-auto" href="https://www.vagaro.com/theshopatteaburyllc/book-now">Book Now</v-btn>
+              <v-btn class="mx-auto" href="https://www.vagaro.com/theshopatteaburyllc">Book Now</v-btn>
             </v-row>
             <v-row class="mt-5">
               <v-btn
@@ -24,9 +24,3 @@
     </v-container>
   </v-main>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const dialog = ref(false)
-</script>
