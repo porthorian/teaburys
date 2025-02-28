@@ -24,25 +24,32 @@
                 <template v-slot:default="{ isActive }">
                   <v-card title="Contact">
                     <v-card-item>
-                      <v-btn
-                        aria-label="609-301-0098"
-                        prepend-icon="mdi-chat"
-                        size="large"
-                      >
-                      <template v-slot:prepend>
-                        <v-icon>mdi-chat</v-icon><strong>/</strong><v-icon>mdi-phone</v-icon>
-                      </template>
-                      <span style="font-size: 1.2rem">609-301-0098</span>
-                      </v-btn>
+                      <UseClipboard v-slot="{ copy, copied }" source="609-301-0098">
+                        <v-btn
+                          aria-label="609-301-0098"
+                          prepend-icon="mdi-chat"
+                          size="large"
+                          @click="copy()"
+                        >
+                        <template v-slot:prepend>
+                          <v-icon>mdi-chat</v-icon><strong>/</strong><v-icon>mdi-phone</v-icon>
+                        </template>
+                        
+                        <span style="font-size: 1.2rem">{{ copied ? 'Copied' : '609-301-0098' }}</span>
+                        </v-btn>
+                      </UseClipboard>
                     </v-card-item>
                     <v-card-item>
-                      <v-btn
-                        aria-label="rosaf@teaburys.com"
-                        prepend-icon="mdi-email"
-                        size="large"
-                      >
-                      rosaf@teaburys.com
-                      </v-btn>
+                      <UseClipboard v-slot="{ copy, copied }" source="rosaf@teaburys.com">
+                        <v-btn
+                          aria-label="rosaf@teaburys.com"
+                          prepend-icon="mdi-email"
+                          size="large"
+                          @click="copy()"
+                        >
+                        {{ copied ? 'Copied' : 'rosaf@teaburys.com' }}
+                        </v-btn>
+                      </UseClipboard>
                     </v-card-item>
                     <v-card-item class="mb-4">
                       <v-btn
@@ -64,3 +71,7 @@
     </v-container>
   </v-main>
 </template>
+
+<script setup lang="ts">
+import { UseClipboard } from '@vueuse/components'
+</script>
