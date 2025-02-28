@@ -1,5 +1,5 @@
 <template>
-  <v-app class="fill-height" style="background-color:#ede9cc">
+  <v-app class="fill-height" style="background-color:#ffffff">
     <v-container class="fill-height">
       <slot></slot>
       <v-footer class="position-bottom position-relative w-100 mt-auto rounded-lg">

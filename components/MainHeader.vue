@@ -2,7 +2,7 @@
     <v-app-bar class="header">
       <NuxtLink to="/" class="d-flex align-center link-no-style mr-3">
         <v-img src="/fcr-favicon-color.png" class="fcr-image" cover/>
-        <h3 class="fcr-title">Friday Code Release</h3>
+        <h3 class="fcr-title"></h3>
       </NuxtLink>
       <v-list class="d-md-flex hidden-sm-and-down">
         <v-list-item><v-btn to="/products" text>Products</v-btn></v-list-item>
