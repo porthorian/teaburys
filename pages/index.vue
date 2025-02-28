@@ -25,6 +25,7 @@
                   <v-card title="Contact">
                     <v-card-item>
                       <v-btn
+                        aria-label="609-301-0098"
                         prepend-icon="mdi-chat"
                         size="large"
                       >
@@ -36,6 +37,7 @@
                     </v-card-item>
                     <v-card-item>
                       <v-btn
+                        aria-label="rosaf@teaburys.com"
                         prepend-icon="mdi-email"
                         size="large"
                       >
@@ -44,6 +46,7 @@
                     </v-card-item>
                     <v-card-item class="mb-4">
                       <v-btn
+                        aria-label="@ro_cuts"
                         size="large"
                         prepend-icon="mdi-instagram"
                         href="https://www.instagram.com/ro_cuts?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
