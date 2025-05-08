@@ -6835,7 +6835,7 @@ vue-devtools-stub@^0.1.0:
   resolved "https://registry.yarnpkg.com/vue-devtools-stub/-/vue-devtools-stub-0.1.0.tgz#a65b9485edecd4273cedcb8102c739b83add2c81"
   integrity sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==
 
-vue-router@^4.5.0, vue-router@^4.5.1:
+vue-router@^4.5.1:
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.5.1.tgz#47bffe2d3a5479d2886a9a244547a853aa0abf69"
   integrity sha512-ogAF3P97NPm8fJsE4by9dwSYtDwXIY1nFY9T6DyQnGHd1E2Da94w9JIolpe42LJGIl0DwOHBi8TcRPlPGwbTtw==
@@ -6853,10 +6853,10 @@ vue@^3.5.13:
     "@vue/server-renderer" "3.5.13"
     "@vue/shared" "3.5.13"
 
-vuetify@^3.8.3:
-  version "3.8.3"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.8.3.tgz#6bee55aefdf0b3789f6a2e53058c88c63b54db44"
-  integrity sha512-hzlYRGY6O+GB2R2Ujg1HBtHjVAgJc3NkeymZl1IahZ+0vEyV0qLCFvTqYhXziB04O5roidBe6sca9TED7VYA/A==
+vuetify@^3.8.4:
+  version "3.8.4"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.8.4.tgz#3d3316868d789407c6fb5adb26ad90a0e09b6dfc"
+  integrity sha512-hfA1eqA6vhrF5LF8Yfk0uHdNUmh8Uckxn5wREiThO82HW/9Vfreh+IpxPgEtCsAhV33KW+NVamltQCu3HczRKw==
 
 web-streams-polyfill@^3.0.3:
   version "3.3.3"
