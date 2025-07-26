@@ -6527,10 +6527,10 @@ vue@^3.5.14, vue@^3.5.18:
     "@vue/server-renderer" "3.5.18"
     "@vue/shared" "3.5.18"
 
-vuetify@^3.8.7:
-  version "3.8.7"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.8.7.tgz#59377e406551c92f5d532694095462c9ee2bc6fa"
-  integrity sha512-Xid5za36cOA9We0QShcjiI4qoWXcwABhlhDHi8/0qpjSrBgJ63GobQdZ9YYyRvjMT3XXJqgbkdis1RS/oGL8Bw==
+vuetify@^3.9.2:
+  version "3.9.2"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.9.2.tgz#7458886c6e5922c9499a6d75001c3af2240cc374"
+  integrity sha512-Pax7YCgbE5SArY8CDM0A9dTVHnG1oU79eIBA+FEEg3dDFV7bc+0AppJJLfG2+aoaBlJf2UH7tOCflJ/U23YU1Q==
 
 web-streams-polyfill@^3.0.3:
   version "3.3.3"
