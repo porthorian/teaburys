@@ -2136,22 +2136,13 @@
   dependencies:
     upath "^2.0.1"
 
-"@vueuse/components@^13.7.0":
-  version "13.7.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/components/-/components-13.7.0.tgz#21528ef345ed4f287599400c5fcb28c9e9de2a8b"
-  integrity sha512-7kxKz1Uh9XSivRg1RJzmcnpjBii4nMaCt1BOkxsVz/Ot5krIugujyHQNrFVx2igKuObY3x6CJGTrWlb8303SDg==
+"@vueuse/components@^13.9.0":
+  version "13.9.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/components/-/components-13.9.0.tgz#cb3aff2963e0d84c204651839ffe8eeadc2d1932"
+  integrity sha512-0DDFpjG3hEEK+3YgSzE/OzOGqpo/KmxcXWzW2YdmgahZvaoUdegn68GmbdcHRJE7CH55dDj13Cz47iN8QoI3jQ==
   dependencies:
-    "@vueuse/core" "13.7.0"
-    "@vueuse/shared" "13.7.0"
-
-"@vueuse/core@13.7.0":
-  version "13.7.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-13.7.0.tgz#fcb63184443144858645ea87b382535226d523f7"
-  integrity sha512-myagn09+c6BmS6yHc1gTwwsdZilAovHslMjyykmZH3JNyzI5HoWhv114IIdytXiPipdHJ2gDUx0PB93jRduJYg==
-  dependencies:
-    "@types/web-bluetooth" "^0.0.21"
-    "@vueuse/metadata" "13.7.0"
-    "@vueuse/shared" "13.7.0"
+    "@vueuse/core" "13.9.0"
+    "@vueuse/shared" "13.9.0"
 
 "@vueuse/core@13.8.0":
   version "13.8.0"
@@ -2162,7 +2153,7 @@
     "@vueuse/metadata" "13.8.0"
     "@vueuse/shared" "13.8.0"
 
-"@vueuse/core@^13.9.0":
+"@vueuse/core@13.9.0", "@vueuse/core@^13.9.0":
   version "13.9.0"
   resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-13.9.0.tgz#051aeff47a259e9e4d7d0cc3e54879817b0cbcad"
   integrity sha512-ts3regBQyURfCE2BcytLqzm8+MmLlo5Ln/KLoxDVcsZ2gzIwVNnQpQOL/UKV8alUqjSZOlpFZcRNsLRqj+OzyA==
@@ -2170,11 +2161,6 @@
     "@types/web-bluetooth" "^0.0.21"
     "@vueuse/metadata" "13.9.0"
     "@vueuse/shared" "13.9.0"
-
-"@vueuse/metadata@13.7.0":
-  version "13.7.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-13.7.0.tgz#5c825d3706ecbf6ea6c969c0080f4f3ef414c37d"
-  integrity sha512-8okFhS/1ite8EwUdZZfvTYowNTfXmVCOrBFlA31O0HD8HKXhY+WtTRyF0LwbpJfoFPc+s9anNJIXMVrvP7UTZg==
 
 "@vueuse/metadata@13.8.0":
   version "13.8.0"
@@ -2195,11 +2181,6 @@
     "@vueuse/core" "13.8.0"
     "@vueuse/metadata" "13.8.0"
     local-pkg "^1.1.2"
-
-"@vueuse/shared@13.7.0":
-  version "13.7.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-13.7.0.tgz#b7466ec90361a69621cd09d5b396fbda6d8f2f9c"
-  integrity sha512-Wi2LpJi4UA9kM0OZ0FCZslACp92HlVNw1KPaDY6RAzvQ+J1s7seOtcOpmkfbD5aBSmMn9NvOakc8ZxMxmDXTIg==
 
 "@vueuse/shared@13.8.0":
   version "13.8.0"
