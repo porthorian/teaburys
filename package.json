@@ -19,7 +19,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "sass": "^1.91.0",
+    "sass": "^1.92.1",
     "vite-plugin-vuetify": "^2.1.2",
     "vuetify": "^3.9.7"
   }
