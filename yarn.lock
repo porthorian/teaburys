@@ -2230,15 +2230,6 @@
     "@vueuse/core" "13.9.0"
     "@vueuse/shared" "13.9.0"
 
-"@vueuse/core@13.8.0":
-  version "13.8.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-13.8.0.tgz#760800f866dd8a1152a0a28e412ed53336e9ad7e"
-  integrity sha512-rmBcgpEpxY0ZmyQQR94q1qkUcHREiLxQwNyWrtjMDipD0WTH/JBcAt0gdcn2PsH0SA76ec291cHFngmyaBhlxA==
-  dependencies:
-    "@types/web-bluetooth" "^0.0.21"
-    "@vueuse/metadata" "13.8.0"
-    "@vueuse/shared" "13.8.0"
-
 "@vueuse/core@13.9.0", "@vueuse/core@^13.9.0":
   version "13.9.0"
   resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-13.9.0.tgz#051aeff47a259e9e4d7d0cc3e54879817b0cbcad"
@@ -2248,30 +2239,20 @@
     "@vueuse/metadata" "13.9.0"
     "@vueuse/shared" "13.9.0"
 
-"@vueuse/metadata@13.8.0":
-  version "13.8.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-13.8.0.tgz#5bf97b8733346fc1abf0c20c31e01ea672279c0e"
-  integrity sha512-BYMp3Gp1kBUPv7AfQnJYP96mkX7g7cKdTIgwv/Jgd+pfQhz678naoZOAcknRtPLP4cFblDDW7rF4e3KFa+PfIA==
-
 "@vueuse/metadata@13.9.0":
   version "13.9.0"
   resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-13.9.0.tgz#57c738d99661c33347080c0bc4cd11160e0d0881"
   integrity sha512-1AFRvuiGphfF7yWixZa0KwjYH8ulyjDCC0aFgrGRz8+P4kvDFSdXLVfTk5xAN9wEuD1J6z4/myMoYbnHoX07zg==
 
-"@vueuse/nuxt@^13.8.0":
-  version "13.8.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/nuxt/-/nuxt-13.8.0.tgz#275cf0ce4d331c6e921e43603dafd894d9d74aa0"
-  integrity sha512-RpD/CWl6nJ6q92+EpPCsnwlq/N7YqTm1TRV9SY7ERt3WRaMzkIyMfYMGOonpGRG2Y0XSHK9aiWi8+QpoB1YKDw==
+"@vueuse/nuxt@^13.9.0":
+  version "13.9.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/nuxt/-/nuxt-13.9.0.tgz#96bf3fcc459114816ccb291cf9f3ef38846efca0"
+  integrity sha512-n/9BRU3nLl2mVI6rYbB3jOctCmQD0xT799hXPCwCn1PyvK7r6O9Nt1dxfVCMfKCDAiCi8Fz2IqPC6Zs2Dv1pVA==
   dependencies:
     "@nuxt/kit" "^3.18.1"
-    "@vueuse/core" "13.8.0"
-    "@vueuse/metadata" "13.8.0"
+    "@vueuse/core" "13.9.0"
+    "@vueuse/metadata" "13.9.0"
     local-pkg "^1.1.2"
-
-"@vueuse/shared@13.8.0":
-  version "13.8.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-13.8.0.tgz#ed7baa8ad19e164a7626592531694bfe6c94d2e3"
-  integrity sha512-x4nfM0ykW+RmNJ4/1IzZsuLuWWrNTxlTWUiehTGI54wnOxIgI9EDdu/O5S77ac6hvQ3hk2KpOVFHaM0M796Kbw==
 
 "@vueuse/shared@13.9.0":
   version "13.9.0"
