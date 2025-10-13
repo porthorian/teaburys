@@ -21,6 +21,6 @@
   "devDependencies": {
     "sass": "^1.92.1",
     "vite-plugin-vuetify": "^2.1.2",
-    "vuetify": "^3.10.3"
+    "vuetify": "^3.10.5"
   }
 }
