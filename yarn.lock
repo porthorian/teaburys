@@ -2080,15 +2080,6 @@
     "@vueuse/core" "14.1.0"
     "@vueuse/shared" "14.1.0"
 
-"@vueuse/core@14.0.0":
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-14.0.0.tgz#a3d9520935a191b167cb91e08f698545e46bf0a6"
-  integrity sha512-d6tKRWkZE8IQElX2aHBxXOMD478fHIYV+Dzm2y9Ag122ICBpNKtGICiXKOhWU3L1kKdttDD9dCMS4bGP3jhCTQ==
-  dependencies:
-    "@types/web-bluetooth" "^0.0.21"
-    "@vueuse/metadata" "14.0.0"
-    "@vueuse/shared" "14.0.0"
-
 "@vueuse/core@14.1.0", "@vueuse/core@^14.1.0":
   version "14.1.0"
   resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-14.1.0.tgz#274e98e591a505333b7dfb2bcaf7b4530a10b9c9"
@@ -2097,11 +2088,6 @@
     "@types/web-bluetooth" "^0.0.21"
     "@vueuse/metadata" "14.1.0"
     "@vueuse/shared" "14.1.0"
-
-"@vueuse/metadata@14.0.0":
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-14.0.0.tgz#139231dc8503f172a7a45ce1ceaa7a415befbf3c"
-  integrity sha512-6yoGqbJcMldVCevkFiHDBTB1V5Hq+G/haPlGIuaFZHpXC0HADB0EN1ryQAAceiW+ryS3niUwvdFbGiqHqBrfVA==
 
 "@vueuse/metadata@14.1.0":
   version "14.1.0"
@@ -2117,11 +2103,6 @@
     "@vueuse/core" "14.1.0"
     "@vueuse/metadata" "14.1.0"
     local-pkg "^1.1.2"
-
-"@vueuse/shared@14.0.0":
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-14.0.0.tgz#15a424285fd6d453d1a99d1caba8cc293992868d"
-  integrity sha512-mTCA0uczBgurRlwVaQHfG0Ja7UdGe4g9mwffiJmvLiTtp1G4AQyIjej6si/k8c8pUwTfVpNufck+23gXptPAkw==
 
 "@vueuse/shared@14.1.0":
   version "14.1.0"
@@ -5641,10 +5622,10 @@ vue@^3.5.22, vue@^3.5.23:
     "@vue/server-renderer" "3.5.24"
     "@vue/shared" "3.5.24"
 
-vuetify@^3.11.0:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.11.0.tgz#a4d8762118c0895980b09d62672cb0c6a21d765c"
-  integrity sha512-ITGeT3uaTIwI2SdyTvtE45tY6FlS2oWklfLU47s2K0ZHnu1it35p9lz8oE15Id8ThtKyQojQGobMkN+korheEw==
+vuetify@^3.11.3:
+  version "3.11.3"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.11.3.tgz#b95cd9db1130a75eb8f708538195d47b0a200676"
+  integrity sha512-sZe/2f143cbqtJupkynOGOHxgn+YjRrXIj0atZlBECbOr4nZPCmSdukPSbudb0wU3fQpUjlaTGx0m4vIBPQqGQ==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"
