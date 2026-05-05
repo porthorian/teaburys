@@ -1,75 +1,40 @@
-# Nuxt 3 Minimal Starter
+# The Shop at Teabury
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt/Vuetify site for The Shop at Teabury.
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
 
 # yarn
 yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Environment
 
-Start the development server on `http://localhost:3000`:
+### Announcement Banner
+
+The homepage can show a dismissible announcement banner above the hero logo. It is controlled by public Nuxt runtime config values, so the content is visible to users.
+
+The banner renders only when:
+
+- `NUXT_PUBLIC_ANNOUNCEMENT_MESSAGE` is set.
+- `NUXT_PUBLIC_ANNOUNCEMENT_EXPIRES_AT` is a valid future ISO timestamp.
+
+Optional CTA button fields render only when both label and URL are set.
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+NUXT_PUBLIC_ANNOUNCEMENT_TITLE="Heads up"
+NUXT_PUBLIC_ANNOUNCEMENT_MESSAGE="Holiday hours are limited this week."
+NUXT_PUBLIC_ANNOUNCEMENT_EXPIRES_AT="2026-06-01T04:00:00Z"
+NUXT_PUBLIC_ANNOUNCEMENT_ACTION_LABEL="Book Now"
+NUXT_PUBLIC_ANNOUNCEMENT_ACTION_URL="https://www.vagaro.com/theshopatteaburyllc"
 ```
 
-## Production
+Dismissal is page-view only. The banner returns on a fresh visit while the announcement is still active.
 
-Build the application for production:
+### Analytics
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+PennyLabs analytics is configured in `nuxt.config.ts` and only renders when `NODE_ENV === 'production'`.
