@@ -1,8 +1,10 @@
 <template>
   <v-app class="fill-height" style="background-color:#effced">
-    <v-container class="fill-height">
-      <slot></slot>
-      <v-footer class="position-bottom position-relative w-100 mt-auto rounded-lg">
+    <v-container class="d-flex flex-column fill-height">
+      <v-main>
+        <slot></slot>
+      </v-main>
+      <v-footer class="position-bottom position-relative w-100 mt-auto rounded-lg max-height-footer">
         <v-row justify="center" no-gutters>
           <v-col class="text-center mt-auto" cols="12">
               {{ new Date().getFullYear() }} — <strong>Teaburys</strong>
@@ -18,3 +20,9 @@
     </v-container>
   </v-app>
 </template>
+
+<style scoped>
+.max-height-footer {
+  max-height: 80px;
+}
+</style>
