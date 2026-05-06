@@ -20,6 +20,7 @@ The homepage can show a dismissible announcement banner above the hero logo. It 
 
 The banner renders only when:
 
+- The app is running in production.
 - `NUXT_PUBLIC_ANNOUNCEMENT_MESSAGE` is set.
 - `NUXT_PUBLIC_ANNOUNCEMENT_EXPIRES_AT` is a valid future ISO timestamp.
 

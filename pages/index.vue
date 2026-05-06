@@ -165,6 +165,7 @@ const phone = '609-301-0098'
 const email = 'rosaf@teaburys.com'
 const contactDialog = ref(false)
 const announcementDismissed = ref(false)
+const isProduction = import.meta.env.PROD
 
 const isoTimestampPattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?(?:Z|[+-]\d{2}:\d{2})$/
 
@@ -190,6 +191,7 @@ const showAnnouncement = computed(() => {
   const expiresAt = announcementExpiresAt.value
 
   return Boolean(
+    isProduction &&
     !announcementDismissed.value &&
     announcement.value.message &&
     expiresAt !== null &&
