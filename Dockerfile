@@ -2,8 +2,10 @@ FROM node:26.13.0-alpine AS builder
 
 WORKDIR /workspace
 
+RUN npm install --global @yarnpkg/cli-dist@4.12.0
+
 COPY . .
-RUN yarn install
+RUN yarn install --immutable
 RUN yarn build
 
 FROM node:26.13.0-alpine
