@@ -156,8 +156,10 @@ const showAnnouncement = computed(() => {
 }
 
 .poster-tagline {
+  font-family: Georgia, serif;
   font-size: clamp(1.125rem, 2vw, 1.625rem);
-  font-weight: 500;
+  font-style: italic;
+  font-weight: 400;
   line-height: 1.3;
   grid-area: tagline;
   margin: 0;
