@@ -10,13 +10,16 @@ export default defineNuxtPlugin((app) => {
       defaultTheme: 'shopClassic',
       themes: {
         shopClassic: {
-          dark: true,
+          dark: false,
           colors: {
-            background: '#101111',
-            surface: '#181a18',
-            primary: '#d94a43',
-            secondary: '#779566',
-            accent: '#f2d7c9',
+            background: '#eaf3e8',
+            'on-background': '#1c291e',
+            surface: '#f5f9f4',
+            'on-surface': '#1c291e',
+            primary: '#992e3a',
+            'on-primary': '#ffffff',
+            secondary: '#c2d5bf',
+            'on-secondary': '#1c291e',
             error: '#ff6b6b',
             info: '#8fa7a1',
             success: '#7fa66a',

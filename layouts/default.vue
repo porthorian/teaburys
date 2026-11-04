@@ -1,103 +1,102 @@
 <template>
-  <v-app class="site-app">
+  <v-app :class="{ 'site-app--home': route.path === '/' }">
     <v-main class="site-main">
       <slot />
     </v-main>
 
-    <v-footer class="site-footer">
-      <v-container class="footer-container">
-        <div class="footer-brand">
-          <strong>The Shop at Teabury</strong>
-          <span>{{ new Date().getFullYear() }} — Oakhurst, NJ</span>
-        </div>
-
-        <div class="footer-actions">
-          <v-btn
-            :href="instagramUrl"
-            aria-label="@ro_cuts on Instagram"
-            color="accent"
-            icon="mdi-instagram"
-            rounded="lg"
-            variant="text"
-          />
-          <v-btn
-            :href="bookingUrl"
-            aria-label="Book on Vagaro"
-            class="vagaro-button"
-            color="accent"
-            rounded="lg"
-            variant="text"
-          >
-            <v-img height="24" src="/vegaro.png" width="24" />
-          </v-btn>
-        </div>
-      </v-container>
-    </v-footer>
+    <footer class="site-footer">
+      <div class="footer-details">
+        <p class="footer-copyright">© {{ copyrightYear }} The Shop at Teabury</p>
+        <p class="footer-location">Oakhurst, NJ</p>
+      </div>
+      <div class="footer-links">
+        <a :href="instagramUrl" aria-label="The Shop at Teabury on Instagram">
+          <v-icon icon="mdi-instagram" size="24" aria-hidden="true" />
+        </a>
+        <a :href="bookingUrl" aria-label="Book on Vagaro">
+          <img src="/vegaro.png" alt="" width="24" height="24">
+        </a>
+      </div>
+    </footer>
   </v-app>
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
+const copyrightYear = useState('copyright-year', () => new Date().getFullYear())
+
 const bookingUrl = 'https://www.vagaro.com/theshopatteaburyllc'
 const instagramUrl = 'https://www.instagram.com/ro_cuts?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
 </script>
 
 <style scoped>
-.site-app {
-  background: #101111;
-  color: #f8efe8;
-  min-height: 100vh;
-}
-
 .site-main {
-  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .site-footer {
-  background: #0c0d0d;
-  border-top: 1px solid rgba(242, 215, 201, 0.12);
-  color: rgba(248, 239, 232, 0.7);
-  padding: 0;
-}
-
-.footer-container {
   align-items: center;
   display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  max-width: 1180px;
-  min-height: 86px;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  justify-content: center;
+  padding: 0.25rem 1rem 0.75rem;
 }
 
-.footer-brand {
+.footer-details {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.footer-details p {
+  margin: 0;
+}
+
+.footer-copyright {
+  font-weight: 600;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.footer-links a {
+  background-color: rgb(var(--v-theme-secondary));
+  border-radius: 50%;
+  color: inherit;
   display: grid;
-  gap: 0.2rem;
+  height: 48px;
+  place-items: center;
+  text-decoration: none;
+  width: 48px;
 }
 
-.footer-brand strong {
-  color: #fff8f2;
+.footer-links a:hover,
+.footer-links a:active {
+  background-color: color-mix(in srgb, rgb(var(--v-theme-secondary)) 90%, currentColor);
 }
 
-.footer-brand span {
-  font-size: 0.92rem;
-}
-
-.footer-actions {
-  align-items: center;
-  display: flex;
-  gap: 0.45rem;
-}
-
-.vagaro-button {
-  min-width: 48px;
+.footer-links a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
 
 @media (max-width: 600px) {
-  .footer-container {
-    align-items: flex-start;
+  .site-footer {
     flex-direction: column;
-    min-height: auto;
-    padding-bottom: 1.1rem;
-    padding-top: 1.1rem;
+    text-align: center;
+  }
+
+  .site-app--home :deep(.v-application__wrap) {
+    justify-content: center;
+  }
+
+  .site-app--home .site-main {
+    flex-grow: 0;
   }
 }
 </style>

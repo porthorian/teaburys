@@ -1,167 +1,113 @@
 <template>
-  <div class="home-page fill-height">
-    <section class="hero-section fill-height">
-      <v-container class="hero-container">
-        <div class="hero-content">
-          <v-alert
-            v-if="showAnnouncement"
-            class="announcement-alert"
-            icon="mdi-bullhorn"
-            role="status"
-            rounded="lg"
+  <div class="home-page">
+    <v-alert
+      v-if="showAnnouncement"
+      class="announcement"
+      color="secondary"
+      rounded="sm"
+      variant="flat"
+    >
+      <div class="announcement-content">
+        <div role="status">
+          <strong v-if="announcement.title" class="announcement-title">
+            {{ announcement.title }}
+          </strong>
+          <p>{{ announcement.message }}</p>
+        </div>
+
+        <div class="announcement-actions">
+          <v-btn
+            v-if="announcement.actionLabel && announcement.actionUrl"
+            :href="announcement.actionUrl"
+            color="primary"
+            rounded="sm"
             variant="flat"
           >
-            <div class="announcement-content">
-              <div>
-                <div
-                  v-if="announcement.title"
-                  class="announcement-title"
-                >
-                  {{ announcement.title }}
-                </div>
-                <div class="announcement-message">
-                  {{ announcement.message }}
-                </div>
-              </div>
-
-              <div class="announcement-actions">
-                <v-btn
-                  v-if="announcement.actionLabel && announcement.actionUrl"
-                  :href="announcement.actionUrl"
-                  class="announcement-action"
-                  color="primary"
-                  rounded="lg"
-                  size="small"
-                  variant="flat"
-                >
-                  {{ announcement.actionLabel }}
-                </v-btn>
-
-                <v-btn
-                  aria-label="Dismiss announcement"
-                  color="accent"
-                  icon="mdi-close"
-                  rounded="lg"
-                  size="small"
-                  variant="text"
-                  @click="announcementDismissed = true"
-                />
-              </div>
-            </div>
-          </v-alert>
-
-          <div class="sign-panel">
-            <v-img
-              alt="The Shop at Teabury"
-              aspect-ratio="1066/674"
-              class="shop-mark"
-              eager
-              src="/the-shop.png"
-            />
-          </div>
-
-          <div class="hero-actions">
-            <v-btn
-              :href="bookingUrl"
-              append-icon="mdi-arrow-right"
-              prepend-icon="mdi-calendar-check"
-              class="hero-button"
-              color="primary"
-              rounded="lg"
-              size="large"
-            >
-              Book Now
-            </v-btn>
-
-            <v-btn
-              class="hero-button"
-              color="accent"
-              prepend-icon="mdi-phone"
-              rounded="lg"
-              size="large"
-              variant="outlined"
-              @click="contactDialog = true"
-            >
-              Contact
-            </v-btn>
-          </div>
-        </div>
-      </v-container>
-    </section>
-
-    <v-dialog v-model="contactDialog" max-width="520px">
-      <v-card class="contact-card" rounded="lg">
-        <v-card-title class="contact-title">Contact</v-card-title>
-        <v-card-text>
-          <div class="contact-list">
-            <UseClipboard v-slot="{ copy, copied }" :source="phone">
-              <v-btn
-                :aria-label="phone"
-                block
-                class="contact-option"
-                color="surface"
-                size="large"
-                variant="flat"
-                @click="copy()"
-              >
-                <template #prepend>
-                  <v-icon>mdi-chat</v-icon>
-                  <strong class="button-slash">/</strong>
-                  <v-icon>mdi-phone</v-icon>
-                </template>
-                {{ copied ? 'Copied' : phone }}
-              </v-btn>
-            </UseClipboard>
-
-            <UseClipboard v-slot="{ copy, copied }" :source="email">
-              <v-btn
-                :aria-label="email"
-                block
-                class="contact-option"
-                color="surface"
-                prepend-icon="mdi-email"
-                size="large"
-                variant="flat"
-                @click="copy()"
-              >
-                {{ copied ? 'Copied' : email }}
-              </v-btn>
-            </UseClipboard>
-
-            <v-btn
-              :href="instagramUrl"
-              aria-label="@ro_cuts"
-              block
-              class="contact-option"
-              color="surface"
-              prepend-icon="mdi-instagram"
-              size="large"
-              variant="flat"
-            >
-              @ro_cuts
-            </v-btn>
-          </div>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="accent" variant="text" @click="contactDialog = false">
-            Close
+            {{ announcement.actionLabel }}
           </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+          <v-btn
+            aria-label="Dismiss announcement"
+            icon="mdi-close"
+            rounded="sm"
+            variant="text"
+            @click="announcementDismissed = true"
+          />
+        </div>
+      </div>
+    </v-alert>
+
+    <h1 class="shop-sign">
+      <img
+        src="/the-shop.png"
+        alt="The Shop at Teabury, barbershop in Oakhurst, NJ"
+        width="1066"
+        height="674"
+      >
+    </h1>
+
+    <div class="hero-actions">
+      <v-btn
+        :href="bookingUrl"
+        append-icon="mdi-arrow-right"
+        class="hero-button hero-booking"
+        color="primary"
+        rounded="pill"
+        variant="flat"
+      >
+        Book Now
+      </v-btn>
+
+      <v-dialog
+        v-model="contactDialog"
+        :transition="false"
+        aria-labelledby="contact-title"
+        max-width="400"
+      >
+        <template #activator="{ props }">
+          <v-btn
+            v-bind="props"
+            class="hero-button"
+            color="secondary"
+            rounded="pill"
+            variant="flat"
+          >
+            Contact
+          </v-btn>
+        </template>
+
+        <v-card class="contact-card" rounded="sm" variant="flat">
+          <div class="contact-content">
+            <h2 id="contact-title">Contact</h2>
+            <p>{{ phone }}</p>
+            <div class="contact-actions">
+              <v-btn :href="`tel:${phoneLink}`" color="secondary" rounded="pill" variant="flat">
+                Call
+              </v-btn>
+              <v-btn :href="`sms:${phoneLink}`" color="secondary" rounded="pill" variant="flat">
+                Text
+              </v-btn>
+            </div>
+
+            <a class="contact-email" :href="`mailto:${email}`">{{ email }}</a>
+
+            <v-btn class="contact-close" rounded="sm" variant="text" @click="contactDialog = false">
+              Close
+            </v-btn>
+          </div>
+        </v-card>
+      </v-dialog>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { UseClipboard } from '@vueuse/components'
 import { computed, ref } from 'vue'
 
 const config = useRuntimeConfig()
 
 const bookingUrl = 'https://www.vagaro.com/theshopatteaburyllc'
-const instagramUrl = 'https://www.instagram.com/ro_cuts?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
 const phone = '609-301-0098'
+const phoneLink = `+1${phone.replaceAll('-', '')}`
 const email = 'rosaf@teaburys.com'
 const contactDialog = ref(false)
 const announcementDismissed = ref(false)
@@ -202,162 +148,151 @@ const showAnnouncement = computed(() => {
 
 <style scoped>
 .home-page {
-  background:
-    radial-gradient(circle at 50% 42%, rgba(217, 74, 67, 0.12), transparent 30rem),
-    linear-gradient(180deg, #111313 0%, #151716 54%, #101111 100%);
-  color: #f8efe8;
-  display: flex;
-  min-height: 100%;
+  align-content: center;
+  display: grid;
+  grid-template-columns: minmax(0, 52rem);
+  justify-content: center;
+  justify-items: center;
+  padding: clamp(1.5rem, 5svh, 3rem) clamp(1rem, 4vw, 2rem);
 }
 
-.hero-section {
+.shop-sign {
+  margin: 0;
+  width: min(100%, 100svh);
+}
+
+.shop-sign img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.hero-actions,
+.contact-actions,
+.announcement-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.hero-button,
+.contact-card .v-btn,
+.announcement .v-btn {
+  box-shadow: none; /* taste-skill-ignore: reset Vuetify’s zero-size shadow. */
+  letter-spacing: normal;
+  min-height: 48px;
+  text-transform: none;
+}
+
+.hero-button {
+  font-size: 1rem;
+  font-weight: 600;
+  min-height: 52px;
+  min-width: 10rem;
+}
+
+.hero-actions {
   align-items: center;
-  display: flex;
-  flex: 1;
-  overflow: hidden;
-  padding: clamp(2.75rem, 7vw, 5.5rem) 0;
 }
 
-.hero-container {
-  max-width: 920px;
+.hero-booking {
+  font-size: 1.125rem;
+  min-height: 60px;
+  min-width: 13rem;
+  padding-inline: 1.5rem;
 }
 
-.hero-content {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-inline: auto;
-  max-width: 820px;
-}
-
-.announcement-alert {
-  background:
-    linear-gradient(135deg, rgba(217, 74, 67, 0.18), rgba(24, 26, 24, 0.94)),
-    #181a18;
-  border: 1px solid rgba(242, 215, 201, 0.16);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
-  color: #fff8f2;
-  margin-bottom: 1.25rem;
+.announcement {
+  margin-bottom: 1rem;
   width: 100%;
 }
 
 .announcement-content {
   align-items: center;
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
   justify-content: space-between;
+  overflow-wrap: anywhere;
 }
 
 .announcement-title {
-  color: #fff8f2;
-  font-size: 0.95rem;
-  font-weight: 800;
-  line-height: 1.25;
+  display: block;
+  margin-bottom: 0.25rem;
 }
 
-.announcement-message {
-  color: rgba(248, 239, 232, 0.78);
-  font-size: 0.92rem;
-  line-height: 1.45;
+.announcement p,
+.contact-card h2,
+.contact-card p {
+  margin: 0;
 }
 
 .announcement-actions {
   align-items: center;
-  display: flex;
-  flex: 0 0 auto;
-  gap: 0.35rem;
-}
-
-.announcement-action {
-  min-width: 88px;
-}
-
-.hero-actions {
-  align-items: center;
-  display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-  margin-top: 1.35rem;
+  max-width: 100%;
 }
 
-.hero-button {
-  min-height: 50px;
-  min-width: 138px;
-}
-
-.sign-panel {
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.62), rgba(242, 215, 201, 0.2)),
-    #ead7c5;
-  border: 1px solid rgba(255, 248, 242, 0.54);
-  border-radius: 18px;
-  box-shadow:
-    0 26px 58px rgba(0, 0, 0, 0.38),
-    inset 0 0 0 1px rgba(16, 17, 17, 0.08);
-  margin-inline: auto;
-  max-width: 760px;
-  overflow: hidden;
-  padding: clamp(1rem, 3vw, 1.65rem);
-  width: 100%;
-}
-
-.shop-mark {
-  filter: drop-shadow(0 16px 24px rgba(16, 17, 17, 0.22));
-  margin: auto;
-  width: 100%;
+.announcement-actions .v-btn {
+  height: auto;
+  max-width: 100%;
+  min-width: 48px;
+  white-space: normal;
 }
 
 .contact-card {
-  background: #181a18;
-  border: 1px solid rgba(242, 215, 201, 0.14);
+  box-shadow: none; /* taste-skill-ignore: reset Vuetify’s dialog shadow. */
 }
 
-.contact-title {
-  color: #fff8f2;
-  font-weight: 800;
-  padding: 1.25rem 1.25rem 0.25rem;
-}
-
-.contact-list {
+.contact-content {
+  align-items: start;
   display: grid;
-  gap: 0.75rem;
+  gap: 0.5rem;
+  padding: 1.5rem;
 }
 
-.contact-option {
-  justify-content: flex-start;
-  min-height: 52px;
+.contact-card h2 {
+  font-size: 1.5rem;
+  line-height: 1.25;
 }
 
-.button-slash {
-  color: rgba(248, 239, 232, 0.44);
-  margin: 0 0.2rem;
-  font-weight: 800;
-  font-size: 25px;
+.contact-actions {
+  margin-bottom: 0.5rem;
 }
 
-@media (max-width: 959px) {
-  .sign-panel {
-    max-width: 680px;
-  }
+.contact-email {
+  align-content: center;
+  color: rgb(var(--v-theme-primary));
+  justify-self: start;
+  min-height: 48px;
+  overflow-wrap: anywhere;
+  text-underline-offset: 0.2em;
+}
+
+.contact-close {
+  justify-self: end;
+}
+
+.hero-button:focus-visible,
+.contact-card .v-btn:focus-visible,
+.announcement .v-btn:focus-visible,
+.contact-email:focus-visible {
+  outline: 2px solid rgb(var(--v-theme-on-background));
+  outline-offset: 3px;
 }
 
 @media (max-width: 600px) {
-  .hero-section {
-    padding: 2rem 0 2rem;
+  .home-page {
+    padding-bottom: 1.25rem;
   }
 
-  .announcement-content {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .announcement-actions {
-    justify-content: space-between;
+  .hero-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: min(100%, 20rem);
   }
 
   .hero-button {
-    flex: 1 1 100%;
+    min-width: 0;
   }
 }
 </style>

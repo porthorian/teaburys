@@ -14,8 +14,8 @@ const props = defineProps({
         max-height="450" max-width="450"
         class="mx-auto"></v-img>
         <div class="rounded-lg pa-6">
-        <h1 class="text-h1 text-surface">{{ error.statusCode }}</h1>
-        <h5 class="text-h5 mb-3 text-surface">{{ error.statusMessage }}</h5>
+        <h1 class="text-h1">{{ error.statusCode }}</h1>
+        <h5 class="text-h5 mb-3">{{ error.statusMessage }}</h5>
         <v-btn to="/">Go back home</v-btn>
       </div>
     </div>
