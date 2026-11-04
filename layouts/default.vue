@@ -5,9 +5,17 @@
     </v-main>
 
     <footer class="site-footer">
+      <img
+        v-if="route.path === '/'"
+        class="footer-sign"
+        src="/the-shop.png"
+        alt=""
+        width="1066"
+        height="674"
+      >
       <div class="footer-details">
-        <p class="footer-copyright">© {{ copyrightYear }} The Shop at Teabury</p>
         <p class="footer-location">Oakhurst, NJ</p>
+        <p class="footer-copyright">© {{ copyrightYear }} The Shop at Teabury</p>
       </div>
       <div class="footer-links">
         <a :href="instagramUrl" aria-label="The Shop at Teabury on Instagram">
@@ -85,18 +93,85 @@ const instagramUrl = 'https://www.instagram.com/ro_cuts?utm_source=ig_web_button
   outline-offset: 3px;
 }
 
+.site-app--home {
+  --home-gutter: clamp(1rem, 4vw, 4rem);
+  --home-inset: max(var(--home-gutter), calc((100% - 92rem) / 2 + var(--home-gutter)));
+}
+
+.site-app--home .site-footer {
+  background-color: color-mix(in srgb, rgb(var(--v-theme-background)) 68%, rgb(var(--v-theme-secondary)));
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  padding: 0.875rem var(--home-inset);
+  text-align: left;
+}
+
+.site-app--home .footer-details {
+  overflow-wrap: anywhere;
+}
+
+.site-app--home .footer-links a {
+  background-color: transparent;
+}
+
+.site-app--home .footer-links a:hover,
+.site-app--home .footer-links a:active {
+  background-color: rgb(var(--v-theme-secondary));
+}
+
+.footer-sign {
+  display: block;
+  height: auto;
+  width: 6.25rem;
+}
+
+@media (width > 960px) {
+  .site-app--home {
+    --home-inset: max(var(--home-gutter), calc((100% - clamp(59rem, 72vw, 68rem)) / 2));
+  }
+}
+
+@media (720px < width <= 960px) and (orientation: portrait) {
+  .site-app--home {
+    --home-gutter: clamp(2rem, 14vw, 8rem);
+  }
+}
+
+@media (max-width: 720px) {
+  .site-app--home {
+    --home-gutter: max(1rem, 4vw, calc((100% - 30rem) / 2));
+  }
+
+  .site-app--home .site-footer {
+    background-color: transparent;
+    gap: 0.5rem;
+    padding-block: 0.75rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .site-app--home .footer-links {
+    gap: 0;
+  }
+
+  .footer-sign {
+    width: 3.5rem;
+  }
+}
+
 @media (max-width: 600px) {
   .site-footer {
     flex-direction: column;
     text-align: center;
   }
+}
 
-  .site-app--home :deep(.v-application__wrap) {
-    justify-content: center;
+@media (max-width: 18rem) {
+  .site-app--home .site-footer {
+    grid-template-columns: auto minmax(0, 1fr);
   }
 
-  .site-app--home .site-main {
-    flex-grow: 0;
+  .site-app--home .footer-links {
+    grid-column: 2;
+    justify-self: start;
   }
 }
 </style>
